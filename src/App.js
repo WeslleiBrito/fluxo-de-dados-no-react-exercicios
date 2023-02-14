@@ -20,6 +20,61 @@ const Container = styled.div`
 
 function App() {
   const [pageFlow, setPageFlow] = useState(1);
+
+  const [datas, setDatas] = useState({
+    inputName: '',
+    inputPhotograph: '',
+    inputTitle: '',
+    inputImage: '',
+    inputDescription: ''
+  })
+
+  const onChangeInputName = (event) => {
+    setDatas(
+      {
+        ...datas,
+        inputName: event.target.value
+      }
+    )
+  }
+
+  const onChangeInputPhotograph = (event) => {
+
+    setDatas(
+      {
+        ...datas,
+        inputPhotograph: event.target.value
+      }
+    )
+
+  }
+
+  const onChangeInputTitle = (event) => {
+    setDatas(
+      {
+        ...datas,
+        inputTitle: event.target.value
+      }
+    )
+  }
+
+  const onChangeInputImage = (event) => {
+    setDatas(
+      {
+        ...datas,
+        inputImage: event.target.value
+      }
+    )
+  }
+
+  const onChangeInputDescription = (event) => {
+    setDatas(
+      {
+        ...datas,
+        inputDescription: event.target.value
+      }
+    )
+  }
   return (
     <>
       <GlobalStyle />
@@ -27,9 +82,16 @@ function App() {
         <aside>
           <Header />
           {pageFlow === 1 ? (
-            <FormularioLogin setPageFlow={setPageFlow} />
+            <FormularioLogin
+              setPageFlow={setPageFlow} inputName={datas.inputName} onChangeInputName={onChangeInputName}
+              inputPhotograph={datas.inputPhotograph} onChangeInputPhotograph={onChangeInputPhotograph}
+            />
           ) : (
-            <FormularioPostagem />
+            <FormularioPostagem
+              inputTitle={datas.inputTitle} onChangeInputTitle={onChangeInputTitle}
+              inputImage={datas.inputImage} onChangeInputImage={onChangeInputImage}
+              inputDescription={datas.inputDescription} onChangeInputDescription={onChangeInputDescription}
+            />
           )}
         </aside>
         <TelaDaPostagem />

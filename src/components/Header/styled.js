@@ -7,3 +7,12 @@ export const TitleHeader = styled.header`
     justify-content: center;
     height: 8vh;
 `
+
+export const ContainerUser = styled.section`
+`
+
+export const Name = styled.h4`
+`
+
+export const Image = styled.img`
+`

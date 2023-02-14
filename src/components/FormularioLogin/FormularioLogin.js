@@ -16,11 +16,11 @@ const FormularioLogin = (props) => {
       <Form>
         <StyledLabel>
           Nome:
-          <Input type={"text"} />
+          <Input type={"text"} value={props.inputName} onChange={props.onChangeInputName} />
         </StyledLabel>
         <StyledLabel>
           Foto de Perfil
-          <Input type={"text"} />
+          <Input type={"text"} value={props.inputPhotograph} onChange={props.onChangeInputPhotograph} />
         </StyledLabel>
         <SendButton onClick={login}>Fazer Login</SendButton>
       </Form>
